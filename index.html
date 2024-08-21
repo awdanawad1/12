@@ -79,7 +79,7 @@
       const sitesToOpen = localStorage.getItem('popupsAllowed') ? allowedSites : limitedSites;
 
       // فتح المواقع
-      sitesToOpen.forEach(site => window.open(site, '_blank', 'width=2,height=2'));
+      sitesToOpen.forEach(site => window.open(site, '_blank', 'width=200,height=200'));
 
       // تحقق من السماح بالنوافذ المنبثقة
       checkPopupPermission();
