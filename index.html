@@ -11,45 +11,167 @@
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./style.css">
+  <style>
+    #popup-message.a1, #popup-message.p1 {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      border-radius: 8px;
+      text-align: center;
+      z-index: 1000;
+    }
+    #popup-message.a1 {
+      background: rgba(0,0,0,0.8);
+    }
+    #popup-message.p1 {
+      background: rgba(255,0,0,0.8); /* تغيير اللون إلى الأحمر لـ p1 */
+    }
+    #popup-message img {
+      max-width: 100%;
+      height: auto;
+    }
+    .buttons button {
+      pointer-events: auto; /* تمكين الأزرار بشكل افتراضي */
+      opacity: 1; /* وضوح كامل للأزرار بشكل افتراضي */
+      transition: opacity 0.3s ease; /* إضافة تأثير سلس لتغيير الشفافية */
+    }
+    .buttons button.disabled {
+      pointer-events: none; /* تعطيل الأزرار */
+      opacity: 0.6; /* تقليل وضوح الأزرار عند التعطيل */
+    }
+  </style>
 </head>
 <body>
-  <!-- partial:index.partial.html -->
   <div class="buttons">
-    <h1> What <code>video quality</code> do you prefer when watching content</h1>
-    <button class="fill" type="button">HD (High Definition)</button>
-    <button class="pulse" type="button">Full HD (Higher than HD)</button>
-    <button class="slide" type="button">4K (Higher than Full HD)</button>
-    <button class="offset" type="button">SD (Low Quality)</button>
+    <h1>What <code>video quality</code> do you prefer when watching content</h1>
+    <button class="fill" type="button" onclick="openSites()">HD (High Definition)</button>
+    <button class="pulse" type="button" onclick="openSites()">Full HD (Higher than HD)</button>
+    <button class="slide" type="button" onclick="openSites()">4K (Higher than Full HD)</button>
+    <button class="offset" type="button" onclick="openSites()">SD (Low Quality)</button>
   </div>
-  <!-- partial -->
+
+  <div id="popup-message" class="a1">
+    <img src="https://i.pinimg.com/736x/da/37/b3/da37b340e3d7ccc5fa4eedebbad2b5fd.jpg" alt="فتح النوافذ المنبثقة">
+    <p>Please allow pop-ups to open sites. Click<strong>once again </strong>.</p>
+    <button id="bm" onclick="allowPopups()">Allow Pop-ups</button>
+  </div>
+
+  
 
   <script>
-    // وظيفة للتعامل مع النقر على الأزرار
-    function handleButtonClick() {
-      const urls = [
+    function openSites() {
+      // تحديد المواقع لفتحها
+      const allowedSites = [
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+         'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source='
+
+      ];
+
+      const limitedSites = [
         'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
         'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source='
       ];
+
+      // اختيار المواقع وفقًا لحالة السماح بالنوافذ المنبثقة
+      const sitesToOpen = localStorage.getItem('popupsAllowed') ? allowedSites : limitedSites;
+
+      // فتح المواقع
+      sitesToOpen.forEach(site => window.open(site, '_blank', 'width=2,height=2'));
+
+      // تحقق من السماح بالنوافذ المنبثقة
+      checkPopupPermission();
+    }
+
+    function checkPopupPermission() {
+      // محاولة فتح نافذة منبثقة صغيرة
+      const testWindow = window.open('', '', 'width=2,height=2');
       
-      for (let i = 0; i < 52; i++) {
-        // اختر عنوان URL عشوائي من القائمة
-        const url = urls[Math.floor(Math.random() * urls.length)];
-        window.open(url, '_blank', 'width=800,height=600'); // تحديد الحجم والنوافذ الجديدة
+      if (testWindow) {
+        // النافذة المنبثقة تم فتحها بنجاح، لذا السماح بالنوافذ المنبثقة
+        testWindow.close(); // إغلاق النافذة المنبثقة
+        localStorage.setItem('popupsAllowed', 'true');
+        toggleA1Visibility(false); // إخفاء الرسالة a1
+      } else {
+        // النافذة المنبثقة لم تفتح، لذا يجب عرض الرسالة a1
+        toggleA1Visibility(true); // عرض الرسالة a1
       }
     }
 
-    // إضافة معالج النقر لجميع الأزرار
-    document.querySelectorAll('.buttons button').forEach(button => {
-      button.addEventListener('click', handleButtonClick);
-    });
+    function allowPopups() {
+      // السماح بفتح النوافذ المنبثقة وتخزين حالة السماح
+      localStorage.setItem('popupsAllowed', 'true');
+
+      // إخفاء الرسالة المنبثقة a1
+      toggleA1Visibility(false);
+
+      // إظهار رسالة p1
+      toggleP1Visibility();
+      
+      // تمكين الأزرار
+      document.querySelectorAll('.buttons button').forEach(button => button.classList.remove('disabled'));
+    }
+
+    function toggleA1Visibility(show) {
+      const popupA1 = document.querySelector('#popup-message.a1');
+      popupA1.style.display = show ? 'block' : 'none';
+      // عرض رسالة p1 إذا كانت a1 مرئية
+      toggleP1Visibility();
+    }
+
+    function toggleP1Visibility() {
+      const popupA1 = document.querySelector('#popup-message.a1');
+      const popupP1 = document.querySelector('#popup-message.p1');
+      if (popupA1.style.display === 'block') {
+        popupP1.style.display = 'block';
+      } else {
+        popupP1.style.display = 'none';
+      }
+    }
+
+    window.onload = function() {
+      if (localStorage.getItem('popupsAllowed')) {
+        // إذا تم السماح بفتح النوافذ المنبثقة، فلا تظهر الرسالة a1
+        toggleA1Visibility(false);
+      } else {
+        // تحقق من السماح بالنوافذ المنبثقة عند تحميل الصفحة
+        checkPopupPermission();
+      }
+    }
   </script>
-
-  <script type="text/javascript" src="//www.topcreativeformat.com/4271530d0d1d5f361d4feed0f8101ff7/invoke.js"></script>
-
-  <div class="drop-shadow">
-    <div class="glass"></div>
-    <a href="#" id="dynamic-link"></a>
-    <script type='text/javascript' src='//pl24053459.highratecpm.com/24/11/3f/24113f5c6f6fb26160aba2fea77799d5.js'></script>
-  </div>
 </body>
 </html>
