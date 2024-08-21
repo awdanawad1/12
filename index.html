@@ -67,44 +67,23 @@
     function openSites() {
       // تحديد المواقع لفتحها
       const allowedSites = [
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-         'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source='
+        'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70',
+        'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70',
+             'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70',
+             'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70',
+             'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70',
+             'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70',
+             'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70',
+             'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70',
+             'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70',
+             'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70',
+       'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70'
 
       ];
 
       const limitedSites = [
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
-        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source='
+        'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70',
+        'https://shamyouthattach.com/qazw3cdff?key=d0a2925c395994df630e4368b90a9c70'
       ];
 
       // اختيار المواقع وفقًا لحالة السماح بالنوافذ المنبثقة
