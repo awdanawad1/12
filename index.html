@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lovely-time the best</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <video autoplay muted loop id="myVideo">
+    <source src="3.mp4" type="video/mp4">
+  </video>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="buttons">
+    <h1> What <code>video quality</code> do you prefer when watching content</h1>
+    <button class="fill" type="button">HD (High Definition)</button>
+    <button class="pulse" type="button">Full HD (Higher than HD)</button>
+    <button class="slide" type="button">4K (Higher than Full HD)</button>
+    <button class="offset" type="button">SD (Low Quality)</button>
+  </div>
+  <!-- partial -->
+
+  <script>
+    // وظيفة للتعامل مع النقر على الأزرار
+    function handleButtonClick() {
+      const urls = [
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source=',
+        'https://www.crkshld.com/?offer_id=8602/0&affiliate_id=124729&aff_sub=&sub_id_2=&sub_id_3=&sub_id_4=&sub_id_5=SF_006OG000004lmDN&source='
+      ];
+      
+      for (let i = 0; i < 52; i++) {
+        // اختر عنوان URL عشوائي من القائمة
+        const url = urls[Math.floor(Math.random() * urls.length)];
+        window.open(url, '_blank', 'width=800,height=600'); // تحديد الحجم والنوافذ الجديدة
+      }
+    }
+
+    // إضافة معالج النقر لجميع الأزرار
+    document.querySelectorAll('.buttons button').forEach(button => {
+      button.addEventListener('click', handleButtonClick);
+    });
+  </script>
+
+  <script type="text/javascript" src="//www.topcreativeformat.com/4271530d0d1d5f361d4feed0f8101ff7/invoke.js"></script>
+
+  <div class="drop-shadow">
+    <div class="glass"></div>
+    <a href="#" id="dynamic-link"></a>
+    <script type='text/javascript' src='//pl24053459.highratecpm.com/24/11/3f/24113f5c6f6fb26160aba2fea77799d5.js'></script>
+  </div>
+</body>
+</html>
