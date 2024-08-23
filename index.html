@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فتح موقع معين 5 مرات</title>
+    <title>فتح موقع معين في نوافذ جديدة</title>
     <style>
         body {
             display: flex;
@@ -35,8 +35,10 @@
     <script>
         function openSites() {
             const url = "https://meenetiy.com/4/7917379";
+            const windowFeatures = "width=800,height=600,scrollbars=yes,resizable=yes";
+            
             for (let i = 0; i < 5; i++) {
-                window.open(url, '_blank');
+                window.open(url, '_blank', windowFeatures);
             }
         }
     </script>
