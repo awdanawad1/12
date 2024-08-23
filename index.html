@@ -1,192 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>lovely-time the best</title>
-  <link rel="icon" href="icon.png" type="image/png">
-  <video autoplay muted loop id="myVideo">
-    <source src="3.mp4" type="video/mp4">
-  </video>
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./style.css">
-  <style>
-    #popup-message.a1, #popup-message.p1 {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 20px;
-      background: rgba(0,0,0,0.8);
-      color: white;
-      border-radius: 8px;
-      text-align: center;
-      z-index: 1000;
-    }
-    #popup-message.a1 {
-      background: rgba(0,0,0,0.8);
-    }
-    #popup-message.p1 {
-      background: rgba(255,0,0,0.8); /* تغيير اللون إلى الأحمر لـ p1 */
-    }
-    #popup-message img {
-      max-width: 100%;
-      height: auto;
-    }
-    .buttons button {
-      pointer-events: auto; /* تمكين الأزرار بشكل افتراضي */
-      opacity: 1; /* وضوح كامل للأزرار بشكل افتراضي */
-      transition: opacity 0.3s ease; /* إضافة تأثير سلس لتغيير الشفافية */
-    }
-    .buttons button.disabled {
-      pointer-events: none; /* تعطيل الأزرار */
-      opacity: 0.6; /* تقليل وضوح الأزرار عند التعطيل */
-    }
-    /* إضافات الإعلانات */
-    #top-ad {
-      position: absolute;
-      top: 0;
-      width: 50%;
-      text-align: center;
-      z-index: 1000;
-    }
-    #right-ad {
-      position: fixed;
-      right: 0;
-      top: 20%;
-      width: 160px;
-      height: 600px;
-      z-index: 1000;
-    }
-    #left-ad {
-      position: fixed;
-      left: 0;
-      top: 20%;
-      width: 160px;
-      height: 600px;
-      z-index: 1000;
-    }
-    #bottom-ad {
-      position: absolute;
-      bottom: 0;
-      width: 50%;
-      text-align: center;
-      z-index: 1000;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فتح موقع معين 5 مرات</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="buttons">
-    <h1>What <code>video quality</code> do you prefer when watching content</h1>
-    <button class="fill" type="button" onclick="openSites()">HD (High Definition)</button>
-    <button class="pulse" type="button" onclick="openSites()">Full HD (Higher than HD)</button>
-    <button class="slide" type="button" onclick="openSites()">4K (Higher than Full HD)</button>
-    <button class="offset" type="button" onclick="openSites()">SD (Low Quality)</button>
-  </div>
+    <button onclick="openSites()">افتح الموقع 5 مرات</button>
 
-  <div id="popup-message" class="a1">
-    <img src="https://i.pinimg.com/736x/da/37/b3/da37b340e3d7ccc5fa4eedebbad2b5fd.jpg" alt="فتح النوافذ المنبثقة">
-    <p>Please allow pop-ups to open sites. Click <strong>once again</strong>.</p>
-    <button id="bm" onclick="allowPopups()">Allow Pop-ups</button>
-  </div>
+    <script>
+        function openSites() {
+            const url = "https://meenetiy.com/4/7917379";
+            for (let i = 0; i < 5; i++) {
+                window.open(url, '_blank');
+            }
+        }
+    </script>
 
-  <script>
-    function openSites() {
-      // تحديد المواقع لفتحها
-      const allowedSites = [
-        'https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379',
-       'https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379',
-        'https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379',
-        'https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379','https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379','https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379','https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379','https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379','https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379'
-
-      ];
-
-      const limitedSites = [
-        
-'https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379',
-        'https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379',
-        'https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379',
-        'https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379','https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379','https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379','https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379',
-        'https://gakrarsabamt.net/4/7917379',
-'https://gakrarsabamt.net/4/7917379'
-      ];
-
-      // اختيار المواقع وفقًا لحالة السماح بالنوافذ المنبثقة
-      const sitesToOpen = localStorage.getItem('popupsAllowed') ? allowedSites : limitedSites;
-
-      // فتح المواقع بنسبة 60% من العرض و100% من الارتفاع
-      sitesToOpen.forEach(site => {
-        const width = screen.width * 0.6;
-        const height = screen.height;
-        window.open(site, '_blank', `width=${width},height=${height}`);
-      });
-
-      // تحقق من السماح بالنوافذ المنبثقة
-      checkPopupPermission();
-    }
-
-    function checkPopupPermission() {
-      // محاولة فتح نافذة منبثقة صغيرة
-      const testWindow = window.open('', '', 'width=1,height=1');
-      
-      if (testWindow) {
-        // النافذة المنبثقة تم فتحها بنجاح، لذا السماح بالنوافذ المنبثقة
-        testWindow.close(); // إغلاق النافذة المنبثقة
-        localStorage.setItem('popupsAllowed', 'true');
-        toggleA1Visibility(false); // إخفاء الرسالة a1
-      } else {
-        // النافذة المنبثقة لم تفتح، لذا يجب عرض الرسالة a1
-        toggleA1Visibility(true); // عرض الرسالة a1
-      }
-    }
-
-    function allowPopups() {
-      // السماح بفتح النوافذ المنبثقة وتخزين حالة السماح
-      localStorage.setItem('popupsAllowed', 'true');
-
-      // إخفاء الرسالة المنبثقة a1
-      toggleA1Visibility(false);
-
-      // تمكين الأزرار
-      document.querySelectorAll('.buttons button').forEach(button => button.classList.remove('disabled'));
-    }
-
-    function toggleA1Visibility(show) {
-      const popupA1 = document.querySelector('#popup-message.a1');
-      popupA1.style.display = show ? 'block' : 'none';
-    }
-
-    window.onload = function() {
-      if (localStorage.getItem('popupsAllowed')) {
-        // إذا تم السماح بفتح النوافذ المنبثقة، فلا تظهر الرسالة a1
-        toggleA1Visibility(false);
-      } else {
-        // تحقق من السماح بالنوافذ المنبثقة عند تحميل الصفحة
-        checkPopupPermission();
-      }
-    }
-  </script>
-
- 
 </body>
 </html>
